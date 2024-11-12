@@ -5,7 +5,7 @@ export const geetachapter = async (req, res) => {
         
         // Send the data in the response
       //  res.send(data);
-        res.render("pages/bhagwatgeeta.ejs",data)
+        res.render("pages/bhagwatgeeta.ejs",{data})
         // Optional: Log the data for debugging
        // console.log("Data:", data);
         console.log("Testing");

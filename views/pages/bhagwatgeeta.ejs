@@ -1,0 +1,26 @@
+<% layout("./layout/boilerplate.ejs") %>
+
+<body class="bg-gray-100 text-gray-800">
+    <div class="bg-cover bg-center bg-opacity-50 h-full w-full" style="background-image: url('https://i.pinimg.com/564x/27/ad/7c/27ad7ccc91f69bc86275f2ae90d1f094.jpg');">
+        <div class="container mx-auto p-6">
+            <h1 class="text-4xl font-bold text-center mb-8 underline">Bhagavad Gita</h1>
+
+            <!-- Responsive grid layout for boxes -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Loop through each chapter in the array -->
+                <% data.forEach(chapter => { %>
+                    <div class="bg-grey-100 shadow-md rounded-lg p-6 border-2 border-black hover:shadow-lg hover:bg-gray-300 transform transition duration-200 hover:scale-105">
+                        <div class="mb-4">
+                            <h2 class="text-2xl font-semibold text-gray-900">
+                                Chapter <%= chapter.chapter_number %>: <%= chapter.name %> (<%= chapter.translation %>)
+                            </h2>
+                            <h3 class="text-lg text-gray-900"><strong>Transliteration:</strong> <%= chapter.transliteration %></h3>
+                            <p class="text-gray-900"><strong>Meaning:</strong> <%= chapter.meaning.en %> / <%= chapter.meaning.hi %></p>
+                            <p class="text-gray-900"><strong>Verses:</strong> <%= chapter.verses_count %></p>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</body>
